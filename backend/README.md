@@ -1,12 +1,12 @@
 # GovDeals Opportunity Tracker Backend
 
-This service exposes a REST API for aggregating and serving GovDeals auction listings. The initial prototype reads from a fixture so the front-end can be developed in parallel, but the structure accommodates future scraper and database integrations.
+This service exposes a REST API for aggregating and serving GovDeals auction listings. The prototype now persists data in a lightweight SQLite database so the dashboard experiences stable identifiers and consistent filtering while the scraping pipeline is developed.
 
 ## Features
 
 - FastAPI application with typed schemas and automatic OpenAPI docs.
 - CORS-enabled for local front-end development.
-- Repository abstraction to swap the JSON fixture with scraper or database sources later.
+- Repository abstraction backed by SQLite so local runs survive restarts while still allowing the source to be swapped for scraper output or PostgreSQL later.
 - Listings endpoint supports keyword, category, bid range, and closing window filters used by the dashboard.
 
 ## Local quickstart
@@ -39,13 +39,21 @@ This service exposes a REST API for aggregating and serving GovDeals auction lis
 
    The service will start on `http://127.0.0.1:8000`. Interactive docs are available at `/docs`.
 
-4. **Verify the demo data**:
+4. **(Optional) Re-seed the local database**:
+
+   ```bash
+   python -m app.seed
+   ```
+
+   The command wipes the SQLite file in `app/data/` and reloads the bundled fixture. Custom paths can be passed with `--database` and `--fixture`.
+
+5. **Verify the demo data**:
 
    ```bash
    curl http://127.0.0.1:8000/listings
    ```
 
-5. **Run the automated tests**:
+6. **Run the automated tests**:
 
    ```bash
    pytest
@@ -53,6 +61,6 @@ This service exposes a REST API for aggregating and serving GovDeals auction lis
 
 ## Next steps
 
-- Replace the JSON repository with calls to the scraping pipeline.
-- Persist listings in PostgreSQL with a SQLModel or SQLAlchemy implementation.
+- Connect the repository seeding to the scraping pipeline output.
+- Migrate from SQLite to PostgreSQL with SQLModel or SQLAlchemy once infrastructure is ready.
 - Add authentication once user-specific watchlists are introduced.

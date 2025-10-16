@@ -4,7 +4,7 @@ This guide explains how buyers and analysts can use the GovDeals Opportunity Tra
 
 ## Overview
 
-The tracker aggregates listings that match your saved searches and presents them in a responsive dashboard. Daily refreshes ensure you have the latest price, status, and availability details.
+The tracker aggregates listings that match your saved searches and presents them in a responsive dashboard. Daily refreshes ensure you have the latest price, status, and availability details, and the prototype stores data in a local SQLite database so results persist between sessions.
 
 ## Dashboard tour
 
@@ -46,7 +46,7 @@ When no listings match your filters, the dashboard displays guidance to adjust c
 ## Troubleshooting
 
 - **Blank dashboard** &mdash; Ensure the backend API is running locally. Refresh the page after the service responds.
-- **Stale data** &mdash; Confirm that the scraper pipeline has populated the repository or database with the latest listings.
+- **Stale data** &mdash; Confirm that the scraper pipeline has populated the repository or database with the latest listings. During prototype testing you can re-run `python -m app.seed` from the `backend/` folder to reload the bundled fixture.
 - **Authentication errors** &mdash; Reserved for future releases. For now, the prototype is open access.
 
 ## Roadmap highlights

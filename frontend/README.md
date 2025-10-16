@@ -27,4 +27,4 @@ The front-end is a lightweight static dashboard that consumes the FastAPI backen
 - Replace the static assets with a Vite or Next.js project for richer state management and routing.
 - Integrate authentication-aware features (saved searches, watchlists) once the backend exposes them.
 - Add charts for bidding trends and notifications for time-sensitive auctions.
-- Connect to live scraper output once the backend repository is replaced with a persistent datastore.
+- Connect to live scraper output now that the backend repository persists to SQLite, paving the way for the later PostgreSQL rollout.

@@ -26,3 +26,9 @@ This log captures major planning and implementation milestones, decisions, and o
 - Updated README, quickstart, user guide, and project overview to reflect the enhanced filtering experience and remaining integration work.
 - Outstanding: Replace the fixture repository with the scraping pipeline output and persist listings in PostgreSQL for stateful filtering.
 
+## 2024-XX-AB
+- Replaced the JSON fixture repository with a SQLite-backed implementation that seeds from the bundled data and exposes a CLI for reseeding.
+- Updated automated tests to operate against temporary SQLite databases via dependency overrides, keeping FastAPI integration coverage intact.
+- Refreshed documentation (README, backend README, quickstart, user guide, project overview, backlog) to explain the new persistence layer and outline the migration path toward PostgreSQL.
+- Outstanding: Feed the SQLite store from the upcoming scraping pipeline and formalize the PostgreSQL migration strategy.
+

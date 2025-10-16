@@ -12,7 +12,7 @@ This repository now contains both the planning artifacts and the first runnable 
 - [`tasks/backlog.md`](tasks/backlog.md): Lightweight backlog synchronized with the primary task board (e.g., Jira/Linear).
 
 ## Prototype code
-- [`backend/`](backend/): FastAPI service exposing listings and a health endpoint. Reads from a JSON fixture today to unblock front-end work and now supports query-parameter filtering backed by automated tests.
+- [`backend/`](backend/): FastAPI service exposing listings and a health endpoint. Persists listings in a lightweight SQLite database seeded from the bundled fixture and supports query-parameter filtering backed by automated tests. A CLI helper (`python -m backend.app.seed`) lets developers rebuild their local database quickly.
 - [`frontend/`](frontend/): Static dashboard that consumes the API, featuring keyword, category, bid range, and closing-window filters with automatic fallback to bundled sample data.
 
 Follow the [quickstart guide](docs/quickstart.md) to launch both services locally.
@@ -20,6 +20,6 @@ Follow the [quickstart guide](docs/quickstart.md) to launch both services locall
 ## Next Steps
 1. Review and refine the project plan with stakeholders.
 2. Populate the backlog with estimates and owners once requirements are confirmed.
-3. Stand up the scraping pipeline and replace the fixture-based repository.
-4. Connect the API to a persistent datastore and begin ingesting real GovDeals data for end-to-end validation.
+3. Stand up the scraping pipeline so the SQLite store is populated from live GovDeals data instead of fixtures.
+4. Plan the migration from the prototype SQLite layer to the target PostgreSQL deployment and validate end-to-end ingestion.
 

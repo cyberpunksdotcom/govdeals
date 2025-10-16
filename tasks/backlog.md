@@ -22,7 +22,7 @@ The backlog mirrors the authoritative task board (Jira/Linear) and tracks work s
 ## Scraper MVP
 - **TODO** Implement resilient HTTP client wrapper with retry/backoff and logging.
 - **TODO** Create modular scraper templates for priority categories.
-- **TODO** Build ingestion pipeline writing to PostgreSQL with deduplication hashes.
+- **IN PROGRESS** Build ingestion pipeline writing to PostgreSQL with deduplication hashes. (Prototype SQLite repository and reseeding CLI complete; awaiting scraper integration and PostgreSQL migration.)
 - **TODO** Establish HTML fixture library and parser unit tests.
 
 ## Business Logic & Alerts

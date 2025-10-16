@@ -21,6 +21,7 @@ Build an automated platform that collects, normalizes, and highlights attractive
    - **Primary database**: PostgreSQL for normalized auction data, change tracking, and user annotations.
    - **Object storage**: S3-compatible bucket for images, attachments, and HTML snapshots.
    - **Cache/message bus**: Redis for rate-limit coordination, distributed locks, and task queues.
+   - **Prototype note**: The FastAPI service now uses a SQLite file for persistence so engineers can iterate on filters, IDs, and downstream interfaces before the managed PostgreSQL instance is provisioned.
 4. **Business Logic**
    - Rule engine scoring listings by fit (price thresholds, category, distance, end date urgency).
    - Change detection (hash diffs) to flag meaningful updates.
