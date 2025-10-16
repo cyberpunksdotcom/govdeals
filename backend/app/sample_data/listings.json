@@ -1,0 +1,41 @@
+[
+  {
+    "listing_id": "8745632",
+    "title": "2014 Ford Explorer Police Interceptor",
+    "category": "Vehicles",
+    "current_bid": 3250.0,
+    "currency": "USD",
+    "end_time": "2024-05-12T20:30:00",
+    "location": "Nashville, TN",
+    "seller": "City of Nashville",
+    "url": "https://www.govdeals.com/index.cfm?fa=Main.Item&itemid=8745632&acctid=1001",
+    "description": "High mileage but well maintained, includes maintenance records.",
+    "thumbnail_url": "https://example.com/thumbnails/explorer.jpg"
+  },
+  {
+    "listing_id": "9987451",
+    "title": "Dell PowerEdge R740 Server",
+    "category": "IT Equipment",
+    "current_bid": 1550.0,
+    "currency": "USD",
+    "end_time": "2024-05-10T14:00:00",
+    "location": "Austin, TX",
+    "seller": "State of Texas",
+    "url": "https://www.govdeals.com/index.cfm?fa=Main.Item&itemid=9987451&acctid=1123",
+    "description": "Dual Xeon Gold CPUs, 128GB RAM, 8x 2TB SAS drives.",
+    "thumbnail_url": "https://example.com/thumbnails/poweredge.jpg"
+  },
+  {
+    "listing_id": "5687420",
+    "title": "2018 John Deere 333G Compact Track Loader",
+    "category": "Heavy Equipment",
+    "current_bid": 18250.0,
+    "currency": "USD",
+    "end_time": "2024-05-15T09:45:00",
+    "location": "Des Moines, IA",
+    "seller": "Polk County",
+    "url": "https://www.govdeals.com/index.cfm?fa=Main.Item&itemid=5687420&acctid=1204",
+    "description": "Low hours, includes bucket and pallet fork attachments.",
+    "thumbnail_url": "https://example.com/thumbnails/deere.jpg"
+  }
+]
