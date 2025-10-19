@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GovDeals Opportunity Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GovDeals Opportunity Tracker</h1>
+      <p class="tagline">Daily insights into auctions that match your buying strategy.</p>
+    </header>
+
+    <main>
+      <section id="filters">
+        <h2>Filter results</h2>
+        <div class="filter-grid">
+          <div class="filter-row">
+            <label for="search">Keyword</label>
+            <input type="search" id="search" placeholder="Search listings" />
+          </div>
+          <div class="filter-row">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="">All categories</option>
+            </select>
+          </div>
+          <div class="filter-row">
+            <label for="min-bid">Minimum bid</label>
+            <input
+              type="number"
+              id="min-bid"
+              min="0"
+              step="0.01"
+              placeholder="0"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="filter-row">
+            <label for="max-bid">Maximum bid</label>
+            <input
+              type="number"
+              id="max-bid"
+              min="0"
+              step="0.01"
+              placeholder="No limit"
+              inputmode="decimal"
+            />
+          </div>
+          <div class="filter-row">
+            <label for="ending-after">Closing after</label>
+            <input type="datetime-local" id="ending-after" />
+          </div>
+          <div class="filter-row">
+            <label for="ending-before">Closing before</label>
+            <input type="datetime-local" id="ending-before" />
+          </div>
+        </div>
+        <button type="button" id="clear-filters" class="secondary-button">
+          Clear filters
+        </button>
+      </section>
+
+      <section id="listings">
+        <h2>Active listings</h2>
+        <div id="listings-grid" class="grid"></div>
+        <p id="empty-state" class="hidden">No listings found. Adjust your filters or try again later.</p>
+      </section>
+    </main>
+
+    <footer>
+      <small>Prototype dashboard &mdash; data refreshed daily.</small>
+    </footer>
+
+    <template id="listing-card-template">
+      <article class="listing-card">
+        <img class="listing-thumbnail" alt="" loading="lazy" />
+        <div class="listing-body">
+          <h3 class="listing-title"></h3>
+          <dl>
+            <div>
+              <dt>Current bid</dt>
+              <dd class="listing-bid"></dd>
+            </div>
+            <div>
+              <dt>Ends</dt>
+              <dd class="listing-end"></dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd class="listing-location"></dd>
+            </div>
+          </dl>
+          <p class="listing-description"></p>
+        </div>
+        <a class="listing-link" target="_blank" rel="noopener">View on GovDeals</a>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
